@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet {
 		PrintWriter write = response.getWriter();
 
 		write.println("the result of 5 times of number " + times);
-
+		// http 조작 get통신
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
