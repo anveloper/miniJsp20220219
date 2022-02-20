@@ -32,13 +32,3 @@ public class HomeServlet extends HttpServlet {
 	}
 }
 
-//1. <% %> : 실행될 자바 코드
-//	<% if( 5 > 1 ){ System.out.println("5는 1보다 크다.") } %>
-//
-//2. <%! %> : 변수, 메서드 등을 선언 할 때
-//	<!% String name = "윤혜림" %>
-//	<!% public int plus(int a, int b){ return a + b; } %>
-//
-//3. <%= %> : 변수, 메서드 등의 실행에 관한 부분
-//	<%= name %>
-//	<%= plus(10, 5)%>
