@@ -22,13 +22,26 @@ public class HomeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String number = request.getParameter("number");
 
-		System.out.println("Client's number is " + number);
-
-		int times = Integer.parseInt(number) * 5;
-
+		int result = Integer.parseInt(number) * 5;
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
 		PrintWriter write = response.getWriter();
 
-		write.println("the result of 5 times of number " + times);
+		write.println("<!DOCTYPE html>"
+				+ "<html lang = 'ko>"
+				+ "<head>"
+				+ "<meta charset='UTF-8'>"
+				+ "<title>servlet</title>"
+				+ "</head>"				
+				+ "<body>"
+				+ "<h1>"
+				+ "보내주신 숫자에 5를 곱한 결과는 "
+				+ result
+				+ "</h1>"
+				+ "</body>"
+				+ "</html>");
 		// http 조작 get통신
 	}
 
