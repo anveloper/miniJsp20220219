@@ -13,13 +13,18 @@ import jakarta.servlet.http.HttpServletResponse;
 public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String number = request.getParameter("number");
-
-		int result = Integer.parseInt(number) * 5;
-
-		request.setAttribute("result", result);
 		
+		
+		StringBuilder sb = new StringBuilder();
+		String number = request.getParameter("number");
+		int num = Integer.parseInt(number);
+		for (int i = 1; i <= 9; i++) {
+			sb.append(num).append(" X ").append(i).append(" = ").append(num * i).append("<br>");
+		}
+
+		request.setAttribute("num", num);
+		request.setAttribute("result", sb);
+
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");
 
 		requestDispatcher.forward(request, response);
@@ -31,4 +36,3 @@ public class HomeServlet extends HttpServlet {
 		doGet(request, response);
 	}
 }
-

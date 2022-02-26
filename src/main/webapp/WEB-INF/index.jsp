@@ -6,11 +6,24 @@
 <title>Servlet</title>
 </head>
 <body>
-		<h1>Servlet으로부터 실행된 JSP</h1>
-		<p>
-				보내주신 값에 5를 곱하면 ${result} 입니다.
+		<h1>Servlet으로부터 계산된 ${num}단</h1>
+		<p style="width: 350px; border: 1px solid">
+				보내 주신 ${num}값을 servlet이 계산한 구구단은
+				<br>
+				${result} 입니다.
 				<%-- <%=request.getAttribute("result") %> EL변환--%>
 		</p>
+		<h1>JSP가 직접 계산한 ${num}단</h1>
+		<div style="width: 350px; border: 1px solid">
+				보내 주신 ${num}값을 jsp가 계산한 구구단은
+				<p>
+						<%int num = (int) request.getAttribute("num");
+						for (int i = 1; i <= 9; i++) {%>
+						<%=num%> X <%=i%> = <%=num * i%><br />
+						<%}%>
+				</p>
+				입니다.
+		</div>
 </body>
 </html>
 
